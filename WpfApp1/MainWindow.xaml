@@ -1,0 +1,38 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Name="HeadGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Orientation="Vertical">
+            <ListBox Name ="ListBox" Height="Auto" ItemsSource="{Binding Path=Cars}" SelectedItem="{Binding SelectedCar}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <TextBlock FontSize="16" Text="{Binding Path=Manufacturer}"  />
+                            <TextBlock FontSize="16" Text="{Binding Path=Color}" />
+                            <TextBlock FontSize="16" Text="{Binding Path=Year}"  />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Button Name="AddButton" Content="Add Car" Click="AddButton_Click" FontSize="30"></Button>
+            <Button Name="RemoveButton" Content="Remove Car" Click="RemoveButton_Click" FontSize="30"></Button>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Vertical">
+            <Label FontSize="30">Manufacturer</Label>
+            <TextBox Name="ManufacturerBox" FontSize="30" Text="{Binding SelectedCar.Color}"></TextBox>
+            <Label FontSize="30" Content="Color"></Label>
+            <TextBox Name="ColorBox" FontSize="30"  Text="{Binding SelectedCar.Color}"></TextBox>
+            <Label FontSize="30" Content="Year"></Label>
+            <TextBox Name="YearBox" FontSize="30"  Text="{Binding SelectedCar.Color}"></TextBox>
+        </StackPanel>
+    </Grid>
+</Window>
