@@ -23,9 +23,6 @@ namespace WpfApp1
         {
             Cars.Remove(SelectedCar);
         }
-        public void WTF()
-        {
-
-        }
+       
     }
 }
