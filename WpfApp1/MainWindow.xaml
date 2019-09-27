@@ -11,8 +11,13 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" Orientation="Vertical" >
-            <ListBox Name ="ListBox" Height="Auto" ItemsSource="{Binding Path=Cars}" SelectedItem="{Binding SelectedCar}">
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <ListBox Grid.Row ="0" ItemsSource="{Binding Path=Cars}" SelectedItem="{Binding SelectedCar}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal" >
@@ -25,9 +30,9 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <Button Name="AddButton" Content="Add Car" Click="AddButton_Click" FontSize="30"></Button>
-            <Button Name="RemoveButton" Content="Remove Car" Click="RemoveButton_Click" FontSize="30"></Button>
-        </StackPanel>
+            <Button Grid.Row="1" Content="Add Car" Click="AddButton_Click" FontSize="30"></Button>
+            <Button Grid.Row="2" Name="RemoveButton" Content="Remove Car" Click="RemoveButton_Click" FontSize="30"></Button>
+        </Grid>
         <StackPanel Grid.Column="1" Orientation="Vertical">
             <Label FontSize="30">Manufacturer</Label>
             <TextBox Name="ManufacturerBox" FontSize="30" Text="{Binding SelectedCar.Manufacturer}"></TextBox>
