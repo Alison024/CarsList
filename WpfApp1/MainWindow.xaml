@@ -17,7 +17,9 @@
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal" >
                             <TextBlock FontSize="16"  Text="{Binding Path=Manufacturer}"/>
+                            <TextBlock FontSize="16"  Text=" "/>
                             <TextBlock FontSize="16"  Text="{Binding Path=Color}"/>
+                            <TextBlock FontSize="16"  Text=" "/>
                             <TextBlock FontSize="16"  Text="{Binding Path=Year}"/>
                         </StackPanel>
                     </DataTemplate>
